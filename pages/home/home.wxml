@@ -1,0 +1,25 @@
+ <view > 
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">
+      <view class="weui-flex">
+        <view class="user-img">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" />
+        </view>
+        <view class="weui-flex__item">
+          <view>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+          </view>
+          <view>
+            <text class="user-motto">{{motto}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-panel__bd">
+      body
+    </view>
+    <view class="weui-panel__ft">
+      footer
+    </view>
+  </view>
+ </view> 

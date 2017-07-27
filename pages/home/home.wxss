@@ -1,0 +1,23 @@
+/**index.wxss**/
+
+.userinfo-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 2rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  width: 200px;
+}
+
+.user-img {
+  margin: 0px;
+  margin-right: 10px;
+  padding: 0 2px;
+  text-align: left;
+  height: 2.3em;
+  line-height: 2.3em;
+  /* color: #cfcfcf; */
+}
