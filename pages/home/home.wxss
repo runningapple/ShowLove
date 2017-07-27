@@ -21,3 +21,11 @@
   line-height: 2.3em;
   /* color: #cfcfcf; */
 }
+
+.love_pic {
+  width: 100%;
+}
+
+.love_btn {
+  text-align: center;
+}

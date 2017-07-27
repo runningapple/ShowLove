@@ -1,8 +1,4 @@
 <view class="page">
-  <!--页头-->
-  <view class="page__hd">
-     <view class="page__title">撒狗粮吧</view>
-  </view>
   <view class="page__bd page__bd_spacing">
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__hd">
@@ -21,17 +17,26 @@
         </view>
       </view>
       <view class="weui-panel__bd">
-        <image src="/img/a.jpg" mode="aspectFit" style="width:100%" />
-        <!-- <cover src="/img/a.jpg"></cover-image> -->
+        <image src="/img/a.jpg" mode="widthFix" class="love_pic"/>
       </view>
       <view class="weui-panel__ft">
-        panel footer
+        <view class="weui-flex">
+          <view class="weui-flex__item love_btn">
+❤️
+          </view>
+          <view class="weui-flex__item love_btn">
+          a
+          </view>
+        </view>
       </view>
     </view>
   </view>
   <view class="page__ft">
-    <view class="weui-footer">
-      <view class="weui-footer__text">Copyright © 精品专栏组</view>
+    <view class="weui-footer weui-footer_fixed-bottom">
+      <!-- <view class="weui-footer__links"> -->
+        <!-- <navigator url="home.json" class="weui-footer__link">撒狗粮吧</navigator> -->
+      <!-- </view> -->
+      <view class="weui-footer__text">Copyright © 2016-2017 奔跑的苹果</view>
     </view>
   </view>
 </view>
