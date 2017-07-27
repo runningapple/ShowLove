@@ -1,25 +1,37 @@
- <view > 
-  <view class="weui-panel weui-panel_access">
-    <view class="weui-panel__hd">
-      <view class="weui-flex">
-        <view class="user-img">
-          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" />
-        </view>
-        <view class="weui-flex__item">
-          <view>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<view class="page">
+  <!--页头-->
+  <view class="page__hd">
+     <view class="page__title">撒狗粮吧</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">
+        <view class="weui-flex">
+          <view class="user-img">
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" />
           </view>
-          <view>
-            <text class="user-motto">{{motto}}</text>
+          <view class="weui-flex__item">
+            <view>
+              <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </view>
+            <view>
+              <text class="user-motto">{{motto}}</text>
+            </view>
           </view>
         </view>
       </view>
-    </view>
-    <view class="weui-panel__bd">
-      body
-    </view>
-    <view class="weui-panel__ft">
-      footer
+      <view class="weui-panel__bd">
+        <image src="/img/a.jpg" mode="aspectFit" style="width:100%" />
+        <!-- <cover src="/img/a.jpg"></cover-image> -->
+      </view>
+      <view class="weui-panel__ft">
+        panel footer
+      </view>
     </view>
   </view>
- </view> 
+  <view class="page__ft">
+    <view class="weui-footer">
+      <view class="weui-footer__text">Copyright © 精品专栏组</view>
+    </view>
+  </view>
+</view>
