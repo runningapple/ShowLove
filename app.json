@@ -1,13 +1,38 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/index/index",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "撒狗粮吧",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home_select.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "img/add.png",
+        "selectedIconPath": "img/add_select.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/like_bt.png",
+        "selectedIconPath": "img/like_bottom.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/me.png",
+        "selectedIconPath": "img/me_select.png"
+      }
+    ]
   }
 }
