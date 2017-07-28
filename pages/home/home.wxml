@@ -1,31 +1,36 @@
 <view class="page">
   <view class="page__bd page__bd_spacing">
     <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">
-        <view class="weui-flex">
-          <view class="user-img">
-            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" />
-          </view>
-          <view class="weui-flex__item">
-            <view>
-              <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <view wx:for="{{loves}}" wx:key="unique" wx:for-item="item">
+        <view class="weui-panel__hd home_head">
+          <view class="weui-flex">
+            <view class="user-img">
+              <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" />
             </view>
-            <view>
-              <text class="user-motto">{{motto}}</text>
+            <view class="weui-flex__item">
+              <view>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+              </view>
+              <view>
+                <text class="user-motto">{{item.motto}}</text>
+              </view>
             </view>
           </view>
         </view>
-      </view>
-      <view class="weui-panel__bd">
-        <image src="/img/a.jpg" mode="widthFix" class="love_pic"/>
-      </view>
-      <view class="weui-panel__ft">
-        <view class="weui-flex">
-          <view class="weui-flex__item love_btn">
-            ❤️
-          </view>
-          <view class="weui-flex__item love_btn">
-          a
+        <view class="weui-panel__bd">
+          <image src="{{item.bd_pic_url}}" mode="widthFix" class="love_pic" />
+        </view>
+        <view class="weui-panel__ft">
+          <view class="weui-flex">
+            <view class="weui-flex__item love_btn">
+              <image src="/img/doge.png" mode="aspectFit" class="love_img" />
+            </view>
+            <view class="weui-flex__item love_btn">
+              <image src="/img/like_border.png" mode="aspectFit" class="love_img" />
+            </view>
+            <view class="weui-flex__item love_btn">
+              <image src="/img/write.png" mode="aspectFit" class="love_img" />
+            </view>
           </view>
         </view>
       </view>
@@ -34,9 +39,9 @@
   <view class="page__ft">
     <view class="weui-footer weui-footer_fixed-bottom">
       <!-- <view class="weui-footer__links"> -->
-        <!-- <navigator url="home.json" class="weui-footer__link">撒狗粮吧</navigator> -->
+      <!-- <navigator url="home.json" class="weui-footer__link">撒狗粮吧</navigator> -->
       <!-- </view> -->
-      <view class="weui-footer__text">Copyright © 2016-2017 奔跑的苹果</view>
+      <!-- <view class="weui-footer__text">Copyright © 2016-2017 奔跑的苹果</view> -->
     </view>
   </view>
 </view>

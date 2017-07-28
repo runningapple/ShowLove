@@ -29,3 +29,12 @@
 .love_btn {
   text-align: center;
 }
+
+.love_img {
+  width:20px;
+  height:20px
+}
+
+.home_head {
+   padding: 12px 2px 8px 2px; 
+}
