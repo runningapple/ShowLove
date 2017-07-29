@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/show/show",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -12,25 +13,24 @@
   },
   "tabBar": {
     "borderStyle": "white",
+    "selectedColor": "#63B8FF",
     "list": [
       {
         "pagePath": "pages/home/home",
         "iconPath": "img/home.png",
+        "text": "首页",
         "selectedIconPath": "img/home_select.png"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/show/show",
         "iconPath": "img/add.png",
+        "text": "撒狗粮",
         "selectedIconPath": "img/add_select.png"
       },
       {
         "pagePath": "pages/index/index",
-        "iconPath": "img/like_bt.png",
-        "selectedIconPath": "img/like_bottom.png"
-      },
-      {
-        "pagePath": "pages/index/index",
         "iconPath": "img/me.png",
+        "text": "我的",
         "selectedIconPath": "img/me_select.png"
       }
     ]

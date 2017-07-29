@@ -1,47 +1,65 @@
 <view class="page">
-  <view class="page__bd page__bd_spacing">
-    <view class="weui-panel weui-panel_access">
-      <view wx:for="{{loves}}" wx:key="unique" wx:for-item="item">
-        <view class="weui-panel__hd home_head">
-          <view class="weui-flex">
-            <view class="user-img">
-              <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" />
-            </view>
-            <view class="weui-flex__item">
-              <view>
-                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <scroll-view scroll-y style="height: {{scrollHeight}}px;" enable-back-to-top="true" bindscrolltolower="loadMore" lower-threshold="8">
+    <view class="page__bd page__bd_spacing">
+      <view class="weui-panel weui-panel_access">
+        <view wx:for="{{loves}}" wx:key="unique" wx:for-item="item" wx:for-index="idx">
+          <view class="weui-panel__hd home_head">
+            <view class="weui-flex">
+              <view class="user-img">
+                <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" />
               </view>
-              <view>
-                <text class="user-motto">{{item.motto}}</text>
+              <view class="weui-flex__item">
+                <view>
+                  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                </view>
+                <view>
+                  <text class="user-motto">{{item.motto}}</text>
+                </view>
               </view>
             </view>
           </view>
-        </view>
-        <view class="weui-panel__bd">
-          <image src="{{item.bd_pic_url}}" mode="widthFix" class="love_pic" />
-        </view>
-        <view class="weui-panel__ft">
-          <view class="weui-flex">
-            <view class="weui-flex__item love_btn">
-              <image src="/img/doge.png" mode="aspectFit" class="love_img" />
+          <view class="weui-panel__bd">
+            <swiper indicator-dots="{{item.imgUrls.length > 1 ? true : false}}" indicator-color="rgba(0, 0, 0, .2)" indicator-active-color="rgba(0, 0, 0, .6)">
+              <block wx:for="{{item.imgUrls}}" wx:for-item="imgItem" wx:key="{{id}}">
+                <swiper-item>
+                  <image src="{{imgItem.url}}" mode="widthFix" class="love_pic" />
+                </swiper-item>
+              </block>
+            </swiper>
+          </view>
+          <view class="weui-panel__ft">
+            <view class="weui-flex panel_btn">
+              <view class="weui-flex__item love_btn" catchtap="dogeTap" data-idx="{{idx}}">
+                <image src="/img/{{item.is_doge ? 'doge_select' : 'doge'}}.png" mode="aspectFit" class="love_img" catchtap="dogeTap" data-idx="{{idx}}" />
+              </view>
+              <view class="weui-flex__item love_btn" catchtap="likeTap" data-idx="{{idx}}">
+                <image src="/img/{{item.is_like ? 'like_select' : 'like_border'}}.png" mode="aspectFit" class="love_img" catchtap="likeTap" data-idx="{{idx}}" />
+              </view>
+              <view class="weui-flex__item love_btn">
+                <image src="/img/write.png" mode="aspectFit" class="love_img" />
+              </view>
             </view>
-            <view class="weui-flex__item love_btn">
-              <image src="/img/like_border.png" mode="aspectFit" class="love_img" />
+            <view class="weui-flex">
+              <view class="weui-flex__item love_detail">
+                {{item.doge_num}}只 doge 吃了该狗粮，{{item.like_num}}次赞
+              </view>
             </view>
-            <view class="weui-flex__item love_btn">
-              <image src="/img/write.png" mode="aspectFit" class="love_img" />
+            <view class="weui-flex">
+              <view class="weui-flex__item love_des">
+                {{item.desc}}
+              </view>
             </view>
           </view>
         </view>
       </view>
     </view>
-  </view>
-  <view class="page__ft">
-    <view class="weui-footer weui-footer_fixed-bottom">
-      <!-- <view class="weui-footer__links"> -->
-      <!-- <navigator url="home.json" class="weui-footer__link">撒狗粮吧</navigator> -->
-      <!-- </view> -->
-      <!-- <view class="weui-footer__text">Copyright © 2016-2017 奔跑的苹果</view> -->
-    </view>
-  </view>
+  </scroll-view>
+  <!-- <view class="page__ft"> -->
+  <!-- <view class="weui-footer weui-footer_fixed-bottom"> -->
+  <!-- <view class="weui-footer__links"> -->
+  <!-- <navigator url="home.json" class="weui-footer__link">撒狗粮吧</navigator> -->
+  <!-- </view> -->
+  <!-- <view class="weui-footer__text">Copyright © 2016-2017 奔跑的苹果</view> -->
+  <!-- </view> -->
+  <!-- </view> -->
 </view>

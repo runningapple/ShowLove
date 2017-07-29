@@ -7,30 +7,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    motto: 'Hangzhou, China>',
+    scrollHeight: 0,
     userInfo: {},
     loves: [{
       motto: 'Hangzhou, China>',
+      desc: '尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈',
       unique: 1,
-      bd_pic_url: '/img/a.jpg',
+      imgUrls: [
+        { id: 1, url: '/img/c.jpg' },
+        { id: 2, url: '/img/b.jpg' }
+      ],
+      doge_num: 2,
+      like_num: 3,
+      comments: 3,
+      is_doge: false,
+      is_like: true
+    }, {
+      motto: 'Hangzhou, China>',
+      desc: '浮光掠影哟哟哟',
+      unique: 2,
+      imgUrls: [
+        { id: 5, url: '/img/b.jpg' },
+        { id: 4, url: '/img/a.jpg' },
+        { id: 6, url: '/img/c.jpg' }
+      ],
       doge_num: 2,
       like_num: 3,
       comments: 3,
       is_doge: false,
       is_like: false
     }, {
-      motto: '34345',
-      unique: 2,
-      bd_pic_url: '/img/a.jpg',
-      doge_num: 2,
-      like_num: 3,
-      comments: 3,
-      is_doge: true,
-      is_like: false
-    }, {
-      motto: 'asdfaafdasf',
+      motto: 'Hangzhou, China>',
+      desc: '自拍自拍自拍',
       unique: 3,
-      bd_pic_url: '/img/a.jpg',
+      imgUrls: [
+        { id: 3, url: '/img/a.jpg' }
+      ],
       doge_num: 2,
       like_num: 3,
       comments: 3,
@@ -39,21 +51,75 @@ Page({
     }]
   },
 
+  dogeTap: function (event) {
+    let index = event.currentTarget.dataset.idx;
+    if (this.data.loves[index].is_doge) {
+      this.data.loves[index].is_doge = false;
+      this.data.loves[index].doge_num--;
+    } else {
+      this.data.loves[index].is_doge = true;
+      this.data.loves[index].doge_num++;
+    }
+    this.setData({
+      loves: this.data.loves
+    });
+  },
+
+  likeTap: function (event) {
+    let index = event.currentTarget.dataset.idx;
+    if (this.data.loves[index].is_like) {
+      this.data.loves[index].is_like = false
+      this.data.loves[index].like_num--;
+    } else {
+      this.data.loves[index].is_like = true
+      this.data.loves[index].like_num++;
+    }
+    this.setData({
+      loves: this.data.loves
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     console.log('onLoad', options);
-    var that = this
+    var that = this;
+    let scrollHeight = 0;
+    wx.getSystemInfo({
+      success: function (res) {
+        scrollHeight = res.windowHeight
+      }
+    });
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function (userInfo) {
       //更新数据
       that.setData({
-        userInfo: userInfo
-      })
+        userInfo: userInfo,
+        scrollHeight: scrollHeight
+      });
     })
   },
 
+  loadMore: function (event) {
+    let temp = {
+      motto: 'Hangzhou, China>',
+      desc: '尾灯拉丝哈哈哈',
+      unique: Date.now(),
+      imgUrls: [
+        { id: 4, url: '/img/c.jpg' },
+        { id: 5, url: '/img/b.jpg' }
+      ],
+      doge_num: 2,
+      like_num: 3,
+      comments: 3,
+      is_doge: true,
+      is_like: false
+    };
+    this.data.loves.push(temp);
+    this.setData({
+      loves: this.data.loves
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

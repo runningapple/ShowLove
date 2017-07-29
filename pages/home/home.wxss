@@ -8,7 +8,7 @@
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: #1a1a1a;
   width: 200px;
 }
 
@@ -31,10 +31,29 @@
 }
 
 .love_img {
-  width:20px;
-  height:20px
+  width: 20px;
+  height: 20px;
+}
+
+.love_des {
+  color: #aaa;
+  /* height: 2.3em; */
+  line-height: 1.625em;
+  margin: 0px 5px;
+  font-size: small;
+}
+
+.love_detail {
+  height: 1.8em;
+  line-height: 1.8em;
+  margin: 0px 5px;
+  font-size: small;
 }
 
 .home_head {
-   padding: 12px 2px 8px 2px; 
+  padding: 12px 2px 8px 2px;
+}
+
+.panel_btn {
+  margin-top: 8px;
 }
