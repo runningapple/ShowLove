@@ -5,7 +5,8 @@ Page({
    */
   data: {
     files: [],
-
+    desc: '',
+    is_anonymous: true
   },
 
   chooseImage: function (e) {
@@ -37,6 +38,21 @@ Page({
     })
   },
 
+  formSubmit: function (e) {
+    console.log('form', e);
+  },
+
+  formReset: function () {
+    this.setData({
+      files: [],
+      desc: '',
+      is_anonymous: true
+    });
+  },
+
+  switchChange: function (e) {
+    console.log('e', e);
+  },
   /**
    * 生命周期函数--监听页面加载
    */

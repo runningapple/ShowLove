@@ -1,9 +1,11 @@
 <view class="page">
-  <view class="page__hd">
-    <view class="page__title">上传图片</view>
-    <!-- <view class="page__desc">上传图片</view> -->
-  </view>
+  <!-- <view class="page__hd"> -->
+  <!-- <view class="page__title">上传图片</view> -->
+  <!-- <view class="page__desc">上传图片</view> -->
+  <!-- </view> -->
   <view class="page__bd page__bd_spacing">
+    <textarea placeholder="给你点狗粮加点调料吧～" class="weui-textarea des" value="{{desc}}" maxlength="140" />
+    <view class="weui-textarea-counter">0/140</view>
     <view class="weui-uploader__bd">
       <view class="weui-uploader__files" id="uploaderFiles">
         <block wx:for="{{files}}" wx:key="*this">
@@ -15,6 +17,16 @@
       <view class="weui-uploader__input-box">
         <view class="weui-uploader__input" bindtap="chooseImage"></view>
       </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item anonymous">匿名</view>
+      <view class="weui-flex__item">
+        <switch class="anony_switch" type="switch" checked="{{is_anonymous}}" bindchange="switchChange" />
+      </view>
+    </view>
+    <view class="btn_view">
+      <button type="primary" style="margin-bottom:2px">发布</button>
+      <button type="primary" plain="true" catchtap="formReset">重置</button>
     </view>
   </view>
 </view>

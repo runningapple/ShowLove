@@ -1,0 +1,16 @@
+.des {
+  height: 5.5em;
+  font-size: small;
+}
+
+.anonymous {
+  margin-top: 3px;
+}
+
+.anony_switch {
+  float: right;
+}
+
+.btn_view {
+  margin-top: 35px;
+}
