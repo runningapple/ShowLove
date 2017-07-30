@@ -14,3 +14,7 @@
 .btn_view {
   margin-top: 35px;
 }
+
+.sub_btn {
+  margin-bottom: 2px;
+}

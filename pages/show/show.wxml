@@ -25,7 +25,7 @@
       </view>
     </view>
     <view class="btn_view">
-      <button type="primary" style="margin-bottom:2px">发布</button>
+      <button type="primary" class="sub_btn" loading="{{submit_status}}" catchtap="formSubmit">发布</button>
       <button type="primary" plain="true" catchtap="formReset">重置</button>
     </view>
   </view>

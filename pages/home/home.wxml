@@ -41,7 +41,7 @@
             </view>
             <view class="weui-flex">
               <view class="weui-flex__item love_detail">
-                {{item.doge_num}}只 doge 吃了该狗粮，{{item.like_num}}次赞
+                {{item.doge_num}}只 doge 吃了该狗粮，{{item.like_num}}次赞，{{item.comments}}条评论
               </view>
             </view>
             <view class="weui-flex">

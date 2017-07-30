@@ -6,7 +6,8 @@ Page({
   data: {
     files: [],
     desc: '',
-    is_anonymous: true
+    is_anonymous: true,
+    submit_status: false //发布状态，如果还在发布中，值为true，未发布和已发布为false
   },
 
   chooseImage: function (e) {
@@ -40,13 +41,17 @@ Page({
 
   formSubmit: function (e) {
     console.log('form', e);
+    this.setData({
+      submit_status: true
+    });
   },
 
   formReset: function () {
     this.setData({
       files: [],
       desc: '',
-      is_anonymous: true
+      is_anonymous: true,
+      submit_status: false
     });
   },
 
