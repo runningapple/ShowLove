@@ -1,0 +1,64 @@
+.userinfo-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 2rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #1a1a1a;
+  width: 200px;
+}
+
+.user-img {
+  margin: 0px;
+  margin-right: 10px;
+  padding: 0 2px;
+  text-align: left;
+  height: 2.3em;
+  line-height: 2.3em;
+  /* color: #cfcfcf; */
+}
+
+
+.love_pic {
+  width: 100%;
+}
+
+.love_btn {
+  text-align: center;
+}
+
+.love_img {
+  width: 20px;
+  height: 20px;
+}
+
+.love_des {
+  color: #aaa;
+  /* height: 2.3em; */
+  line-height: 1.625em;
+  margin: 0px 5px;
+  font-size: small;
+}
+
+.love_detail {
+  height: 1.8em;
+  line-height: 1.8em;
+  margin: 0px 5px;
+  font-size: small;
+}
+
+.home_head {
+  padding: 12px 2px 8px 2px;
+}
+
+.panel_btn {
+  margin-top: 8px;
+}
+
+.des {
+  /* height: 5.5em; */
+  font-size: small;
+  background-color: #aaa;
+}

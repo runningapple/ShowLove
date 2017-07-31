@@ -39,7 +39,9 @@
                 <image src="/img/{{item.is_like ? 'like_select' : 'like_border'}}.png" mode="aspectFit" class="love_img" catchtap="likeTap" data-idx="{{idx}}" />
               </view>
               <view class="weui-flex__item love_btn">
-                <image src="/img/write.png" mode="aspectFit" class="love_img" />
+                <navigator url="../comment/comment">
+                  <image src="/img/write.png" mode="aspectFit" class="love_img" />
+                </navigator>
               </view>
             </view>
             <view class="weui-flex">

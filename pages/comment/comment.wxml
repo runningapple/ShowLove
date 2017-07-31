@@ -1,0 +1,72 @@
+<view class="page">
+  <scroll-view scroll-y style="height: {{scrollHeight}}px;" enable-back-to-top="true" bindscrolltolower="loadMore" upper-threshold="-25" lower-threshold="8" scroll-y="true" bindscrolltoupper="onPullDownRefresh">
+    <view class="page__bd page__bd_spacing">
+      <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd home_head">
+          <view class="weui-flex">
+            <view class="user-img">
+              <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" />
+            </view>
+            <view class="weui-flex__item">
+              <view>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+              </view>
+              <view>
+                <text class="user-motto">{{motto}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-panel__bd">
+          <swiper indicator-dots="{{imgUrls.length > 1 ? true : false}}" indicator-color="rgba(0, 0, 0, .2)" indicator-active-color="rgba(0, 0, 0, .6)">
+            <block wx:for="{{imgUrls}}" wx:for-item="imgItem" wx:key="{{id}}">
+              <swiper-item>
+                <image src="{{imgItem.url}}" mode="widthFix" class="love_pic" />
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view class="weui-panel__ft">
+          <view class="weui-flex panel_btn">
+            <view class="weui-flex__item love_btn" catchtap="dogeTap" data-idx="{{idx}}">
+              <image src="/img/{{is_doge ? 'doge_select' : 'doge'}}.png" mode="aspectFit" class="love_img" catchtap="dogeTap" data-idx="{{idx}}" />
+            </view>
+            <view class="weui-flex__item love_btn" catchtap="likeTap" data-idx="{{idx}}">
+              <image src="/img/{{is_like ? 'like_select' : 'like_border'}}.png" mode="aspectFit" class="love_img" catchtap="likeTap" data-idx="{{idx}}" />
+            </view>
+            <view class="weui-flex__item love_btn">
+              <image src="/img/write.png" mode="aspectFit" class="love_img" />
+            </view>
+          </view>
+          <view class="weui-flex">
+            <view class="weui-flex__item love_detail">
+              {{doge_num}}只 doge 吃了该狗粮，{{like_num}}次赞，{{comments}}条评论
+            </view>
+          </view>
+          <view class="weui-flex">
+            <view class="weui-flex__item love_des">
+              {{desc}}
+            </view>
+          </view>
+        </view>
+        <!-- <view wx:for="{{loves}}" wx:key="unique" wx:for-item="item" wx:for-index="idx"> -->
+        <view class="classname">
+          <view class="weui-flex">
+            <view class="weui-flex__item">
+              <view>
+                <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+                <textarea class="weui-textarea des" auto-height value="{{userInfo.nickName}}: 哇哦～" disabled="true" />
+                <view class="weui-textarea-counter" style="font-size:small">2小时前</view>
+              <textarea class="weui-textarea des" auto-height value="{{userInfo.nickName}}: 哇哦～" disabled="true" />
+                <view class="weui-textarea-counter" style="font-size:small">2小时前</view>
+                <textarea class="weui-textarea des" auto-height value="{{userInfo.nickName}}: 哇哦～" disabled="true" />
+                <view class="weui-textarea-counter" style="font-size:small">2小时前</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- </view> -->
+      </view>
+    </view>
+  </scroll-view>
+</view>
