@@ -1,5 +1,8 @@
 <view class="page">
-  <scroll-view scroll-y style="height: {{scrollHeight}}px;" enable-back-to-top="true" bindscrolltolower="loadMore" lower-threshold="8">
+  <loading hidden="{{hidden}}">
+    刷新中...
+  </loading>
+  <scroll-view scroll-y style="height: {{scrollHeight}}px;" enable-back-to-top="true" bindscrolltolower="loadMore" lower-threshold="8" scroll-y="true" bindscrolltoupper="onPullDownRefresh">
     <view class="page__bd page__bd_spacing">
       <view class="weui-panel weui-panel_access">
         <view wx:for="{{loves}}" wx:key="unique" wx:for-item="item" wx:for-index="idx">

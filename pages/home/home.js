@@ -9,6 +9,7 @@ Page({
   data: {
     scrollHeight: 0,
     userInfo: {},
+    hidden: true,
     loves: [{
       motto: 'Hangzhou, China>',
       desc: '尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈尾灯拉丝哈哈哈',
@@ -94,6 +95,7 @@ Page({
     app.getUserInfo(function (userInfo) {
       //更新数据
       that.setData({
+        hidden: true,
         userInfo: userInfo,
         scrollHeight: scrollHeight
       });
@@ -138,21 +140,23 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({ hidden: true });
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    this.setData({ hidden: true });
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log('pull down');
+    this.setData({ hidden: false });
+    // wx.stopPullDownRefresh();
   },
 
   /**
