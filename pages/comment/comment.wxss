@@ -60,5 +60,9 @@
 .des {
   /* height: 5.5em; */
   font-size: small;
-  background-color: #aaa;
+}
+
+.comm {
+  font-size: small;
+  background-color: #F5FFFA;
 }

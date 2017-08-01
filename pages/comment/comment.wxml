@@ -50,22 +50,24 @@
           </view>
         </view>
         <!-- <view wx:for="{{loves}}" wx:key="unique" wx:for-item="item" wx:for-index="idx"> -->
-        <view class="classname">
+        <view style="margin-top: 10px; border-color: black">
           <view class="weui-flex">
             <view class="weui-flex__item">
               <view>
-                <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
-                <textarea class="weui-textarea des" auto-height value="{{userInfo.nickName}}: 哇哦～" disabled="true" />
+                <text class="userinfo-nickname des">{{userInfo.nickName}}: 哇哦～</text>
+                <view class="weui-textarea-counter" style="font-size:small">12小时前</view>
+                <text class="userinfo-nickname des">{{userInfo.nickName}}: 哈哈～</text>
                 <view class="weui-textarea-counter" style="font-size:small">2小时前</view>
-              <textarea class="weui-textarea des" auto-height value="{{userInfo.nickName}}: 哇哦～" disabled="true" />
-                <view class="weui-textarea-counter" style="font-size:small">2小时前</view>
-                <textarea class="weui-textarea des" auto-height value="{{userInfo.nickName}}: 哇哦～" disabled="true" />
-                <view class="weui-textarea-counter" style="font-size:small">2小时前</view>
+                <text class="userinfo-nickname des">{{userInfo.nickName}}: 啦啦啦</text>
+                <view class="weui-textarea-counter" style="font-size:small">1小时前</view>
               </view>
             </view>
           </view>
         </view>
         <!-- </view> -->
+        <!-- <view class="classname">
+          <textarea placeholder="评论下吧" class="weui-textarea comm" maxlength="140" />
+        </view> -->
       </view>
     </view>
   </scroll-view>
