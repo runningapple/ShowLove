@@ -12,14 +12,14 @@ App({
   login: function () {
     var that = this
     var token = that.globalData.token
-    if (token) {
-      wx.request({
+    if (token) {//本地是否有 token 记录
+      wx.request({//向自己服务器验证 token（用户信息） 是否存在
         url: 'http://127.0.0.1:3000',
         data: {
           token: token
         },
         success: function (res) {
-          if (res.data.code != 0) {
+          if (res.data.code != 0) {//如果用户不存在，则将本地 token 设置为空，进行重新登录或者注册
             that.globalData.token = null;
             that.login();
           }
@@ -37,7 +37,7 @@ App({
           success: function (res) {
             if (res.data.code == 10000) {
               //register
-              that.registerUser();
+              that.registerUser();//注册和登录
               return;
             }
             if (res.data.code != 0) {
